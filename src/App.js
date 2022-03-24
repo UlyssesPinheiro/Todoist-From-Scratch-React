@@ -1,5 +1,12 @@
-function App() {
-  return <div className="App"></div>;
-}
+import Content from "./Components/Layout/Content";
+import Header from "./Components/Layout/Header";
+import classes from "./App.module.css";
 
-export default App;
+export default function App() {
+  return (
+    <div className={classes}>
+      <Header />
+      <Content />
+    </div>
+  );
+}
