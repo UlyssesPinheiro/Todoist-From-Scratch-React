@@ -6,5 +6,4 @@ This project was created alongside the video tutorial: https://www.youtube.com/w
 
 ### Tools used:
 
-Firebase
-Sass
+Styled Components

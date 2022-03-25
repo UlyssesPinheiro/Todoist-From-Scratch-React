@@ -1,15 +1,15 @@
 import React from "react";
 import Home from "./Icons/Home";
 import Menu from "./Icons/Menu";
-import classes from "./LeftHeader.module.css";
 import SearchBar from "./SearchBar/SearchBar";
+import { Ul } from "../UlNav";
 
 export default function LeftHeader() {
   return (
-    <ul className={classes.list}>
-      <Menu className={classes.item} />
-      <Home className={classes.item} />
-      <SearchBar className={classes.bar} />
-    </ul>
+    <Ul>
+      <Menu className="item" />
+      <Home className="item" />
+      <SearchBar className="bar" />
+    </Ul>
   );
 }
