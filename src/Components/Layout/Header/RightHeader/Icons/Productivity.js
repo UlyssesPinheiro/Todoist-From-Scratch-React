@@ -14,7 +14,7 @@ export default function Productivity({ className }) {
 
   const Styled = styled.div`
     color: ${Colors.outline};
-    font-size: ${Font.size1};
+    font-size: ${Font.size0};
     text-align: center;
     align-self: center;
   `;

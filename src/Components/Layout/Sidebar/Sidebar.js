@@ -1,41 +1,23 @@
 import React from "react";
-import classes from "./Sidebar.module.css";
-import {
-  FaChevronDown,
-  FaInbox,
-  FaRegCalendarAlt,
-  FaRegCalendar,
-} from "react-icons/fa";
+import SideBarList from "./List/SideBarList";
+import Projects from "./Projects/Projects";
+import styled from "styled-components";
+import { Colors } from "../../../helpers/Styles/Colors";
 
 export default function Sidebar() {
+  const Div = styled.div`
+    width: 315px;
+    padding-left: 35px;
+    background-color: ${Colors.gray050};
+    height: 100%;
+  `;
+
   return (
-    <div className={classes.sidebar}>
-      <ul className={classes.generic}>
-        <li>
-          <span>
-            <FaInbox />
-          </span>
-          <span>Inbox</span>
-        </li>
-        <li>
-          <span>
-            <FaRegCalendar />
-          </span>
-          <span>Today</span>
-        </li>
-        <li>
-          <span>
-            <FaRegCalendarAlt />
-          </span>
-          <span>Next 7 days</span>
-        </li>
-      </ul>
-      <div className={classes.middle}>
-        <FaChevronDown />
-        <h2>Projects</h2>
+    <Div>
+      <div>
+        <SideBarList />
+        <Projects />
       </div>
-      <ul className={classes.projects}>Projects will be here!</ul>
-      Add Project Component here!!
-    </div>
+    </Div>
   );
 }

@@ -1,5 +1,6 @@
 export const Font = {
-  size1: "13px",
-  size2: "20px",
-  size3: "25px",
+  size0: "12px",
+  size1: "14px",
+  size2: "16px",
+  size3: "20px",
 };

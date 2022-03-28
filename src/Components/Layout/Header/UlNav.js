@@ -1,5 +1,6 @@
 import { Colors } from "../../../helpers/Styles/Colors";
 import styled from "styled-components";
+import { BorderRadius } from "../../../helpers/Styles/BorderRadius";
 
 export const Ul = styled.ul`
   display: flex;
@@ -8,13 +9,13 @@ export const Ul = styled.ul`
 
   .item {
     list-style-type: none;
-    border-radius: 0.3rem;
+    border-radius: ${BorderRadius.small};
     padding: 0 0.2rem;
   }
 
   .bar {
     list-style-type: none;
-    border-radius: 0.3rem;
+    border-radius: ${BorderRadius.small};
     padding: 0.2rem;
   }
 
