@@ -3,6 +3,7 @@ import SideBarList from "./List/SideBarList";
 import Projects from "./Projects/Projects";
 import styled from "styled-components";
 import { Colors } from "../../../helpers/Styles/Colors";
+import CssTestAnimation from "../../CssTestAnimation";
 
 export default function Sidebar() {
   const Div = styled.div`
@@ -17,6 +18,7 @@ export default function Sidebar() {
       <div>
         <SideBarList />
         <Projects />
+        <CssTestAnimation />
       </div>
     </Div>
   );
