@@ -4,7 +4,7 @@ import { BorderRadius } from "../../../../../helpers/Styles/BorderRadius";
 import { Colors } from "../../../../../helpers/Styles/Colors";
 import { ListItem } from "../../../../../helpers/Styles/ListItem";
 
-export default function ProjectItem() {
+export default function ProjectItem(props) {
   const BulletDiv = styled.div`
     height: 10px;
     width: 10px;
@@ -21,7 +21,7 @@ export default function ProjectItem() {
   `;
 
   return (
-    <StyledListItem>
+    <StyledListItem className={props.className}>
       <BulletDiv></BulletDiv>
       <span>ProjectItem</span>
     </StyledListItem>

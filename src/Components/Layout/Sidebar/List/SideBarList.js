@@ -5,6 +5,8 @@ import Today from "./Icons/Today";
 import Upcoming from "./Icons/Upcoming";
 import { Font } from "../../../../helpers/Styles/Font";
 import { ListItem } from "../../../../helpers/Styles/ListItem";
+import { Colors } from "../../../../helpers/Styles/Colors";
+import { BorderRadius } from "../../../../helpers/Styles/BorderRadius";
 
 export default function SideBarList() {
   const Ul = styled.ul`
@@ -12,27 +14,37 @@ export default function SideBarList() {
     list-style: none;
     display: flex;
     flex-direction: column;
+
+    & .hoverClass:hover {
+      background-color: ${Colors.gray200};
+      border-radius: ${BorderRadius.small};
+    }
+  `;
+
+  const Span = styled.span`
+    user-select: none;
+    margin-bottom: 0.2rem;
   `;
 
   return (
     <Ul>
-      <ListItem>
+      <ListItem className="hoverClass">
         <span>
           <Inbox />
         </span>
-        <span>Inbox</span>
+        <Span>Inbox</Span>
       </ListItem>
-      <ListItem>
+      <ListItem className="hoverClass">
         <span>
           <Today />
         </span>
-        <span>Today</span>
+        <Span>Today</Span>
       </ListItem>
-      <ListItem>
+      <ListItem className="hoverClass">
         <span>
           <Upcoming />
         </span>
-        <span>Next 7 days</span>
+        <Span>Next 7 days</Span>
       </ListItem>
     </Ul>
   );

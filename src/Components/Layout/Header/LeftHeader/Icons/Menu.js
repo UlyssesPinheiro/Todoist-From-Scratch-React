@@ -2,9 +2,9 @@ import React from "react";
 import { Colors } from "../../../../../helpers/Styles/Colors";
 import styled from "styled-components";
 
-export default function Menu({ className }) {
+export default function Menu({ className, onClick }) {
   return (
-    <li className={className}>
+    <li onClick={onClick} className={className}>
       <svg
         width="24"
         height="24"

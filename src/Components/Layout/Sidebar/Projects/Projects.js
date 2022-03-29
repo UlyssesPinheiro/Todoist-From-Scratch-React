@@ -6,7 +6,6 @@ import AddTask from "./Icons/AddTask";
 import ProjectsList from "./ProjectsList/ProjectsList";
 import { Colors } from "../../../../helpers/Styles/Colors";
 import { BorderRadius } from "../../../../helpers/Styles/BorderRadius";
-import { CSSTransition } from "react-transition-group";
 
 export default function Projects() {
   const [projectsOnHover, setProjectsOnHover] = useState(false);
@@ -24,15 +23,14 @@ export default function Projects() {
   `;
 
   const Arrow = styled.div`
-    transition: all 300ms;
-
-    & .rotate {
-      transform: rotate(-90deg);
-    }
+    ${projectsExpanded
+      ? `transform: rotate(0deg)`
+      : `transform: rotate(-90deg);`}
   `;
 
   const H2 = styled.h2`
     font-size: ${Font.size1};
+    user-select: none;
   `;
   const AddTaskSty = styled(AddTask)`
     justify-self: flex-end;
@@ -52,35 +50,12 @@ export default function Projects() {
     }
   `;
 
-  const ProjectsListStyled = styled(ProjectsList)`
-    transition: all 0.3s;
-
-    // enter from
-    &.fade-enter {
-      opacity: 0;
-    }
-
-    // enter to
-    &.fade-enter-active {
-      opacity: 1;
-    }
-
-    // exit from
-    &.fade-exit {
-      opacity: 1;
-    }
-
-    // exit to
-    &.fade-exit-active {
-      opacity: 0;
-    }
-  `;
-
   const Archived = styled.p`
     margin-top: 1rem;
     margin-left: 0.5rem;
     font-size: ${Font.size1};
     color: ${Colors.gray400};
+    user-select: none;
   `;
 
   return (
@@ -90,29 +65,18 @@ export default function Projects() {
         onMouseLeave={() => setProjectsOnHover(false)}
         onClick={() => setProjectsExpanded((e) => !e)}
       >
-        <Arrow className={`${projectsExpanded ? "rotate" : ""}`}>
+        <Arrow>
           <ArrowDown />
         </Arrow>
+
         <H2>Projects</H2>
 
-        <CSSTransition in={projectsOnHover} unmountOnExit timeout={300}>
-          <Button>
-            <AddTaskSty />
-          </Button>
-        </CSSTransition>
-        {/* {projectsOnHover && (
-
-        )} */}
+        <Button>
+          <AddTaskSty />
+        </Button>
       </Div>
-      <CSSTransition
-        in={projectsExpanded}
-        classNames="fade"
-        timeout={300}
-        unmountOnExit
-      >
-        {() => <ProjectsListStyled />}
-      </CSSTransition>
-      {/* {projectsExpanded && <ProjectsList />} */}
+
+      {projectsExpanded && <ProjectsList />}
       <Archived>Archived Projects</Archived>
     </>
   );
