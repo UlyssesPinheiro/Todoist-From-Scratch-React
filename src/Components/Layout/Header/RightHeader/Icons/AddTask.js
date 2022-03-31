@@ -2,14 +2,13 @@ import React from "react";
 import { Colors } from "../../../../../helpers/Styles/Colors";
 import styled from "styled-components";
 
+const Li = styled.li`
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 0.2rem;
+`;
 export default function AddTask({ className }) {
-  const Li = styled.li`
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    padding: 0.2rem;
-  `;
-
   return (
     <Li className={className}>
       <svg width="24" height="24" transform="translate(3 5)">

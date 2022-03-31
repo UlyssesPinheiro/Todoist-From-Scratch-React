@@ -1,21 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Home from "./Icons/Home";
 import Menu from "./Icons/Menu";
 import SearchBar from "./SearchBar/SearchBar";
 import { Ul } from "../UlNav";
+import { useSidebar, useSidebarUpdate } from "../../../../context/MyContext";
 
 export default function LeftHeader() {
-  const [sidebar, setsidebar] = useState(false);
+  const toggleSidebar = useSidebarUpdate();
 
   return (
     <Ul>
-      <Menu
-        onClick={() => {
-          console.log(sidebar);
-          return setsidebar((e) => !e);
-        }}
-        className="item"
-      />
+      <Menu onClick={toggleSidebar} className="item" />
       <Home className="item" />
       <SearchBar className="bar" />
     </Ul>

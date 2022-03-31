@@ -1,22 +1,26 @@
 import React from "react";
 import LeftHeader from "./LeftHeader/LeftHeader";
-import classes from "./Header.module.css";
 import RightHeader from "./RightHeader/RightHeader";
 import styled from "styled-components";
 
-export default function Header() {
-  const Nav = styled.nav`
-    display: flex;
-    justify-content: space-between;
-    padding: 0 38px;
-  `;
+const Nav = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  padding: 0 38px;
+`;
 
+const Container = styled.header`
+  background-color: #db4c3f;
+  padding: 0.5rem;
+`;
+
+export default function Header() {
   return (
-    <header className={classes.container}>
+    <Container>
       <Nav>
         <LeftHeader />
         <RightHeader />
       </Nav>
-    </header>
+    </Container>
   );
 }

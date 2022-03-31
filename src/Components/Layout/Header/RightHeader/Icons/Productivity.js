@@ -3,22 +3,21 @@ import styled from "styled-components";
 import { Colors } from "../../../../../helpers/Styles/Colors";
 import { Font } from "../../../../../helpers/Styles/Font";
 
+const Div = styled.div`
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-end;
+  padding: 0.2rem;
+  gap: 0.2rem;
+`;
+
+const Styled = styled.div`
+  color: ${Colors.outline};
+  font-size: ${Font.size0};
+  text-align: center;
+  align-self: center;
+`;
 export default function Productivity({ className }) {
-  const Div = styled.div`
-    display: flex;
-    align-content: flex-end;
-    justify-content: flex-end;
-    padding: 0.2rem;
-    gap: 0.2rem;
-  `;
-
-  const Styled = styled.div`
-    color: ${Colors.outline};
-    font-size: ${Font.size0};
-    text-align: center;
-    align-self: center;
-  `;
-
   return (
     <Div className={className}>
       <svg
