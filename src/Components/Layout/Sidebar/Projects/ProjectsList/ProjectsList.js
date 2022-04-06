@@ -5,6 +5,14 @@ import { Font } from "../../../../../helpers/Styles/Font";
 import { Colors } from "../../../../../helpers/Styles/Colors";
 import { BorderRadius } from "../../../../../helpers/Styles/BorderRadius";
 
+const Archived = styled.p`
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  font-size: ${Font.size1};
+  color: ${Colors.gray400};
+  user-select: none;
+`;
+
 const Ul = styled.ul`
   list-style: none;
   display: flex;
@@ -32,6 +40,7 @@ export default function ProjectsList(props) {
       <ProjectItemSty />
       <ProjectItemSty />
       <ProjectItemSty />
+      <Archived>Archived Projects</Archived>
     </Ul>
   );
 }

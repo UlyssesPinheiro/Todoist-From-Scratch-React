@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Inbox from "./Inbox/Inbox";
 import Today from "./Today/Today";
+import Inbox from "./Inbox/Inbox";
 import Upcoming from "./Upcoming/Upcoming";
+
+import { useSelector } from "react-redux";
+import Completed from "./Completed/Completed";
 
 const Div = styled.div`
   display: flex;
@@ -10,13 +13,14 @@ const Div = styled.div`
 `;
 
 export default function MainContainer() {
-  const mainCont = "inbox";
+  const currentTab = useSelector((state) => state.uiSlice.currentTab);
 
   let contentSelector;
 
-  if (mainCont === "inbox") contentSelector = <Inbox />;
-  if (mainCont === "today") contentSelector = <Today />;
-  if (mainCont === "upcoming") contentSelector = <Upcoming />;
+  if (currentTab === "inbox") contentSelector = <Inbox />;
+  if (currentTab === "today") contentSelector = <Today />;
+  if (currentTab === "upcoming") contentSelector = <Upcoming />;
+  if (currentTab === "completed") contentSelector = <Completed />;
 
   return <Div>{contentSelector}</Div>;
 }

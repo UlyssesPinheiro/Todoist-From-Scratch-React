@@ -3,14 +3,19 @@ import Home from "./Icons/Home";
 import Menu from "./Icons/Menu";
 import SearchBar from "./SearchBar/SearchBar";
 import { Ul } from "../UlNav";
-import { useSidebar, useSidebarUpdate } from "../../../../context/MyContext";
+import { useDispatch } from "react-redux";
+import { uiSlice } from "../../../../Store/uiSlice";
 
 export default function LeftHeader() {
-  const toggleSidebar = useSidebarUpdate();
+  const dispatch = useDispatch();
+
+  function toggleSideBarHandler() {
+    dispatch(uiSlice.actions.toggleSideBar());
+  }
 
   return (
     <Ul>
-      <Menu onClick={toggleSidebar} className="item" />
+      <Menu onClick={toggleSideBarHandler} className="item" />
       <Home className="item" />
       <SearchBar className="bar" />
     </Ul>

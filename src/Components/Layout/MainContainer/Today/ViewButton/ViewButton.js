@@ -2,26 +2,12 @@ import React, { useState } from "react";
 import View from "./Icons/View";
 import ParagraphSmallGrey from "../../../../../helpers/helperComponents/Paragraphs";
 import styled from "styled-components";
-import { BorderRadius } from "../../../../../helpers/Styles/BorderRadius";
 import { Colors } from "../../../../../helpers/Styles/Colors";
+import { Button } from "../../Helpers/ButtonHeader";
 
 const ParagraphView = styled(ParagraphSmallGrey)`
   &.hover {
     color: ${Colors.gray600};
-  }
-`;
-
-const Button = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  background-color: transparent;
-  border: none;
-  border-radius: ${BorderRadius.smaller};
-  padding: 0.1rem;
-
-  &:hover {
-    background-color: ${Colors.gray200};
   }
 `;
 

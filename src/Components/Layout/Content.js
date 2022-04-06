@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import Sidebar from "./Sidebar/Sidebar";
-import { useSidebar } from "../../context/MyContext";
 import MainContainer from "./MainContainer/MainContainer";
+import { useSelector } from "react-redux";
 
 const Section = styled.section`
   height: 100%;
@@ -10,11 +10,11 @@ const Section = styled.section`
   flex-grow: 1;
 `;
 export default function Content() {
-  const sidebar = useSidebar();
+  const uiSlice = useSelector((state) => state.uiSlice);
 
   return (
     <Section>
-      {sidebar && <Sidebar></Sidebar>}
+      {uiSlice.sideBar && <Sidebar></Sidebar>}
       <MainContainer />
     </Section>
   );

@@ -14,7 +14,11 @@ const Div = styled.div`
   gap: 0.5rem;
   margin-top: 1.5rem;
   padding-left: 0.5rem;
-
+`;
+const ProjDiv = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
   cursor: pointer;
 `;
 
@@ -40,14 +44,6 @@ const Button = styled.button`
   }
 `;
 
-const Archived = styled.p`
-  margin-top: 1rem;
-  margin-left: 0.5rem;
-  font-size: ${Font.size1};
-  color: ${Colors.gray400};
-  user-select: none;
-`;
-
 const Arrow = styled.div`
   &.rotate {
     transform: rotate(-90deg);
@@ -55,21 +51,18 @@ const Arrow = styled.div`
 `;
 
 export default function Projects() {
-  const [projectsOnHover, setProjectsOnHover] = useState(false);
   const [projectsExpanded, setProjectsExpanded] = useState(false);
 
   return (
     <>
-      <Div
-        onMouseEnter={() => setProjectsOnHover(true)}
-        onMouseLeave={() => setProjectsOnHover(false)}
-        onClick={() => setProjectsExpanded((e) => !e)}
-      >
-        <Arrow className={`${projectsExpanded ? `` : `rotate`}`}>
-          <ArrowDown />
-        </Arrow>
+      <Div>
+        <ProjDiv onClick={() => setProjectsExpanded((e) => !e)}>
+          <Arrow className={`${projectsExpanded ? `` : `rotate`}`}>
+            <ArrowDown />
+          </Arrow>
 
-        <H2>Projects</H2>
+          <H2>Projects</H2>
+        </ProjDiv>
 
         <Button>
           <AddTaskSty />
@@ -77,7 +70,6 @@ export default function Projects() {
       </Div>
 
       {projectsExpanded && <ProjectsList />}
-      <Archived>Archived Projects</Archived>
     </>
   );
 }

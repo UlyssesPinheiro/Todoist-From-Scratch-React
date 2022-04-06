@@ -7,6 +7,9 @@ import { Font } from "../../../../helpers/Styles/Font";
 import { ListItem } from "../../../../helpers/Styles/ListItem";
 import { Colors } from "../../../../helpers/Styles/Colors";
 import { BorderRadius } from "../../../../helpers/Styles/BorderRadius";
+import { useDispatch } from "react-redux";
+import { uiSlice } from "../../../../Store/uiSlice";
+import Done from "./Icons/Done";
 
 const Ul = styled.ul`
   padding-top: 2rem;
@@ -26,25 +29,57 @@ const Span = styled.span`
 `;
 
 export default function SideBarList() {
+  const dispatch = useDispatch();
+
+  function changeTab(tab) {
+    dispatch(uiSlice.actions.switchCurrentTab(tab));
+  }
+
   return (
     <Ul>
-      <ListItem className="hoverClass" onClick={() => console.log("inbox")}>
+      <ListItem
+        className="hoverClass"
+        onClick={() => {
+          changeTab("inbox");
+        }}
+      >
         <span>
           <Inbox />
         </span>
         <Span>Inbox</Span>
       </ListItem>
-      <ListItem className="hoverClass" onClick={() => console.log("today")}>
+      <ListItem
+        className="hoverClass"
+        onClick={() => {
+          changeTab("today");
+        }}
+      >
         <span>
           <Today />
         </span>
         <Span>Today</Span>
       </ListItem>
-      <ListItem className="hoverClass" onClick={() => console.log("upcoming")}>
+      <ListItem
+        className="hoverClass"
+        onClick={() => {
+          changeTab("upcoming");
+        }}
+      >
         <span>
           <Upcoming />
         </span>
         <Span>Upcoming</Span>
+      </ListItem>
+      <ListItem
+        className="hoverClass"
+        onClick={() => {
+          changeTab("completed");
+        }}
+      >
+        <span>
+          <Done />
+        </span>
+        <Span>Completed</Span>
       </ListItem>
     </Ul>
   );
