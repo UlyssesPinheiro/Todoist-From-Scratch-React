@@ -1,5 +1,17 @@
+import React from "react";
+import MainAddTask from "./MainAddTask/MainAddTask";
 import styled from "styled-components";
-import { Font } from "../../../../helpers/Styles/Font";
+
+export default function HeaderContainer({ children }) {
+  return (
+    <MasterContainer>
+      <Container>
+        <TitleNav>{children}</TitleNav>
+        <MainAddTask />
+      </Container>
+    </MasterContainer>
+  );
+}
 
 const MasterContainer = styled.section`
   display: flex;
@@ -20,21 +32,3 @@ const TitleNav = styled.div`
   justify-content: space-between;
   width: 100%;
 `;
-
-const Title = styled.div`
-  display: flex;
-  align-items: flex-end;
-  gap: 0.4rem;
-  padding-bottom: 0.8rem;
-
-  & h2 {
-    font-size: ${Font.size3};
-  }
-`;
-
-export const headerItems = {
-  MasterContainer,
-  Container,
-  TitleNav,
-  Title,
-};

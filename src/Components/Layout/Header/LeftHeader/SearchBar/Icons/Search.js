@@ -1,6 +1,5 @@
 import React from "react";
 import { Icon } from "../../../../../../helpers/Styles/Icon";
-import styled from "styled-components";
 
 export default function Search({ color }) {
   // const Path = styled.path`

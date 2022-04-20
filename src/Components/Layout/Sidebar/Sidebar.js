@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SideBarList from "./List/SideBarList";
 import Projects from "./Projects/Projects";
 import styled from "styled-components";

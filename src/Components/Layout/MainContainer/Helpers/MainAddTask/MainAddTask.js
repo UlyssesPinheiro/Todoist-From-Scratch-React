@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Colors } from "../../../../../helpers/Styles/Colors";
 import { Font } from "../../../../../helpers/Styles/Font";
@@ -17,12 +17,12 @@ const P = styled.p`
 `;
 
 export default function MainAddTask() {
-  const [hover, setHover] = useState();
+  // const [hover, setHover] = useState();
 
   return (
     <Div
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+    // onMouseEnter={() => setHover(true)}
+    // onMouseLeave={() => setHover(false)}
     >
       <IconAddTask />
       <P>Add Task</P>

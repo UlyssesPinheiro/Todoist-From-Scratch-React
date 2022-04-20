@@ -1,5 +1,4 @@
 import React from "react";
-import { Colors } from "../../../../../../helpers/Styles/Colors";
 
 export default function View({ fill }) {
   return (

@@ -1,18 +1,13 @@
 import React from "react";
-import { headerItems } from "../Helpers/HeaderItems";
-import MainAddTask from "../Helpers/MainAddTask/MainAddTask";
+import { Title } from "../Helpers/Title";
+import HeaderContainer from "../Helpers/HeaderContainer";
 
 export default function Completed() {
   return (
-    <headerItems.MasterContainer>
-      <headerItems.Container>
-        <headerItems.TitleNav>
-          <headerItems.Title>
-            <h2>Completed</h2>
-          </headerItems.Title>
-        </headerItems.TitleNav>
-        <MainAddTask />
-      </headerItems.Container>
-    </headerItems.MasterContainer>
+    <HeaderContainer>
+      <Title>
+        <h2>Completed</h2>
+      </Title>
+    </HeaderContainer>
   );
 }

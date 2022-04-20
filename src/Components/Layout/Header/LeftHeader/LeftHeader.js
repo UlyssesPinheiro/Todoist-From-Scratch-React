@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import Home from "./Icons/Home";
 import Menu from "./Icons/Menu";
 import SearchBar from "./SearchBar/SearchBar";

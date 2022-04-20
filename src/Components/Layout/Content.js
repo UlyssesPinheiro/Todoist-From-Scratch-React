@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import Sidebar from "./Sidebar/Sidebar";
 import MainContainer from "./MainContainer/MainContainer";

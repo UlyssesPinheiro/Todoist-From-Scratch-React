@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import Inbox from "./Icons/Inbox";
 import Today from "./Icons/Today";
 import Upcoming from "./Icons/Upcoming";
-import { Font } from "../../../../helpers/Styles/Font";
 import { ListItem } from "../../../../helpers/Styles/ListItem";
 import { Colors } from "../../../../helpers/Styles/Colors";
 import { BorderRadius } from "../../../../helpers/Styles/BorderRadius";
